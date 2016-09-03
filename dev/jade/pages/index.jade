@@ -1,0 +1,89 @@
+extends ../base/base.jade
+
+block title
+	title Главная страница
+
+block content
+	// BEGIN HEADER 
+	header.header
+		.container
+			.top-line
+				.top-line__logo
+					.logo
+						a(href="#").logo__link
+							img(src="media/images/logo.png", alt="")
+				.top-line__btn
+					a(href="#").btn.btn_blue Подписаться
+			.header__title Экономте на жидкостях для вейпинг до 50% и получите новые эксклюзивные ароматы
+			.header__subtitle Первый сервис подписки на премиальные жидкости для вейпинга в России
+	// END HEADER 
+
+	// BEGIN HOWTO 
+	.howto
+		.container
+			.row
+				.col-6
+					.title Как это работает
+					img(src="media/images/bootle.jpg", alt="").howto__img
+					.howto__text
+						p Из более чем 1500 жидкостей для электронных сигарет мы выбираем для Вас лучшие и закупаем по оптимальным ценам.
+						p Каждый месяц мы доставляем коробку жидкостей прямо к вам домой. Вы экономите до 50% на покупке и каждый месяц получаете новые вкусы и бренды.
+	// END HOWTO 
+
+	// BEGIN PLANS 
+	.plans
+		.container
+			.plan
+				.plan__title platinum
+				.plan__count 11 бутылочек 
+				img(src="media/images/plan1.jpg", alt="").plan__img
+				.plan__oldprice Обычная цена -
+					u 10000
+					| р.
+				.plan__price
+					span.rubl Р
+					| 7000
+				a(href="#").btn.btn_blue
+			.plan.plan_big
+				.plan__title platinum
+				.plan__count 11 бутылочек 
+				img(src="media/images/plan1.jpg", alt="").plan__img
+				.plan__oldprice Обычная цена -
+					u 10000
+					| р.
+				.plan__price
+					span.rubl Р
+					| 7000
+				a(href="#").btn.btn_blue
+			.plan
+				.plan__title platinum
+				.plan__count 11 бутылочек 
+				img(src="media/images/plan1.jpg", alt="").plan__img
+				.plan__oldprice Обычная цена -
+					u 10000
+					| р.
+				.plan__price
+					span.rubl Р
+					| 7000
+				a(href="#").btn.btn_blue
+	// END PLANS 
+
+	// BEGIN ORDER 
+	.order
+		.container
+			.order__title
+			form(action="/").form
+				.form__line
+					.form__control
+						input(type="text" placeholder="Имя" name="name").input
+					.form__control
+						input(type="tel" placeholder="Телефон" name="phone").input
+					.form__control
+						button(type="submit").btn.btn_green подписаться
+	// END ORDER 
+
+	// BEGIN FOOTER 
+	footer.footer
+		.container
+			.copyright Copyright © 2016 Вейп.Онлайн, All rights reserved.
+	// END FOOTER 
