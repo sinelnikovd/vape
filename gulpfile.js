@@ -7,15 +7,15 @@ cleanCSS = require('gulp-clean-css'),
 rename = require('gulp-rename'),
 spritesmith = require('gulp.spritesmith'),
 plumber = require('gulp-plumber'),
-imagemin = require('gulp-imagemin');
+tinypng = require('gulp-tinypng');
 
 
 gulp.task('image', function () {
 	gulp.src('dev/media/images/*')
-	.pipe(imagemin())
+	.pipe(tinypng('MpaOqMI-vDAUh6SV8943pEVaUUyT9LWr'))
 	.pipe(gulp.dest('app/media/images'));
 	gulp.src('dev/media/img/*')
-	.pipe(imagemin())
+	.pipe(tinypng('MpaOqMI-vDAUh6SV8943pEVaUUyT9LWr'))
 	.pipe(gulp.dest('app/media/img'));
 });
 
@@ -75,9 +75,8 @@ gulp.task('sprite', function() {
 
 gulp.task('watch', function () {
 	gulp.watch('dev/sass/**/**/*.sass', ['sass']);
-	gulp.watch('dev/media/**/*', ['image']);
 	gulp.watch('dev/jade/**/**/*.jade', ['jade']);
 	gulp.watch('dev/sprite/*.*', ['sprite']);
 });
 
-gulp.task('default', ['sprite', 'jade', 'sass', 'connect', 'watch','image']);
+gulp.task('default', ['sprite', 'jade', 'sass', 'connect', 'watch']);
