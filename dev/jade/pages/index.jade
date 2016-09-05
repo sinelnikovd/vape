@@ -11,11 +11,13 @@ block content
 				.top-line__logo
 					.logo
 						a(href="#").logo__link
-							img(src="media/images/logo.png", alt="")
+							img(src="media/img/logo.png", alt="")
 				.top-line__btn
-					a(href="#").btn Подписаться
-			.header__title Экономте на жидкостях для вейпинг до 50% и получите новые эксклюзивные ароматы
-			.header__subtitle Первый сервис подписки на премиальные жидкости для вейпинга в России
+					a(href="#").btn.toOrder Подписаться
+			.header__title ЭКОНОМЬТЕ НА ЖИДКОСТЯХ ДЛЯ <br>ВЕЙПИНГА ДО 50% И ПОЛУЧАЙТЕ НОВЫЕ <br>ЭКСКЛЮЗИВНЫЕ АРОМАТЫ
+			.header__subtitle Первый сервис подписки на премиальные жидкости <br>для вейпинга в России
+			.header__btn
+				a(href="#").btn.toOrder Подписаться
 	// END HEADER 
 
 	// BEGIN HOWTO 
@@ -28,7 +30,38 @@ block content
 					.howto__text
 						p Из более чем 1500 жидкостей для электронных сигарет мы выбираем для Вас лучшие и закупаем по оптимальным ценам.
 						p Каждый месяц мы доставляем коробку жидкостей прямо к вам домой. Вы экономите до 50% на покупке и каждый месяц получаете новые вкусы и бренды.
+					.howto__btn
+						a(href="#").btn.toOrder Подписаться
 	// END HOWTO 
+
+	// BEGIN TIME-LINE 
+	.time-line
+		.container
+			.time-line__title
+				span как это работает
+			.row
+				.col-3
+					i.icon.icon_cursor
+					p Выбираете объем коробки и содержание никотина.
+				.col-3
+					i.icon.icon_list
+					p Оформляете подписку.
+				.col-3
+					i.icon.icon_air
+					p 25 числа каждого месяца мы отправляем Вам вашу персонально подобраную коробку.
+				.col-3
+					i.icon.icon_check
+					p ВыбирПолучаете коробку и наслаждаетесь густым и вкусным паром.аете объем коробки и содержание никотина.
+			.time-line__line
+				.time-line__dot
+					span
+				.time-line__dot
+					span
+				.time-line__dot
+					span
+				.time-line__dot
+					span
+	// END TIME-LINE 
 
 	// BEGIN PLANS 
 	.plans
@@ -36,54 +69,68 @@ block content
 			.plan
 				.plan__title platinum
 				.plan__count 11 бутылочек 
-				img(src="media/images/plan1.jpg", alt="").plan__img
+				.plan__img
 				.plan__oldprice Обычная цена -
-					u 10000
+					s 10000
 					| р.
 				.plan__price
 					span.rubl Р
 					| 7000
-				a(href="#").btn.btn_blue
+				.plan__btn
+					a(href="#").btn.toOrder Подписаться
 			.plan.plan_big
 				.plan__title platinum
 				.plan__count 11 бутылочек 
-				img(src="media/images/plan1.jpg", alt="").plan__img
+				.plan__img
 				.plan__oldprice Обычная цена -
-					u 10000
+					s 10000
 					| р.
 				.plan__price
 					span.rubl Р
 					| 7000
-				a(href="#").btn.btn_blue
+				.plan__btn
+					a(href="#").btn.toOrder Подписаться
 			.plan
 				.plan__title platinum
 				.plan__count 11 бутылочек 
-				img(src="media/images/plan1.jpg", alt="").plan__img
+				.plan__img
 				.plan__oldprice Обычная цена -
-					u 10000
+					s 10000
 					| р.
 				.plan__price
 					span.rubl Р
 					| 7000
-				a(href="#").btn.btn_blue
+				.plan__btn
+					a(href="#").btn.toOrder Подписаться
 	// END PLANS 
 
 	// BEGIN ORDER 
 	.order
 		.container
-			.order__title
-			form(action="/").form
+			.order__title Для заказа заполните следующие поля
+			form(action="/").form.submit-form
 				.form__line
 					.form__control
 						input(type="text" placeholder="Имя" name="name").input
 					.form__control
-						input(type="tel" placeholder="Телефон" name="phone").input
+						input(type="tel" placeholder="Телефон" name="phone").input.data-inputmask
 					.form__control
-						button(type="submit").btn.btn_green подписаться
+						select(name="nikotin" placeholder="Содержание никотина").select
+							option(value="") Содержание никотина
+							option(value="0") Без никотина
+							option(value="3") 3 мг
+							option(value="6") 6 мг
+					.form__control
+						button(type="submit").btn подписаться
 	// END ORDER 
 
 	// BEGIN FOOTER 
 	footer.footer
 		.container
-			.copyright Copyright © 2016 Вейп.Онлайн, All rights reserved.
+			.copyright Copyright © 2016 Ejuicebox, All rights reserved.
 	// END FOOTER 
+
+block popup
+	.popup#popup-succes
+		.popup__title Ваш заказ оформлен
+		.popup__text Наш менеджер свяжится с вами в ближайшее время.

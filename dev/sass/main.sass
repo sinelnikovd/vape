@@ -1,10 +1,12 @@
 @import "bourbon"
 @import "helpers/_reset.sass"
-//@import "basic/sprite.sass"
+@import "basic/sprite.sass"
 @import "basic/fonts.sass"
 @import "basic/vars/font-size.sass"
 @import "basic/vars/color.sass"
 @import "blocks/btn.sass"
+@import "libs/selectize.sass"
+@import "libs/magnific-popup.sass"
 //---addSmartScript---//
 
 *::-webkit-input-placeholder
@@ -24,6 +26,9 @@
 	color: #424242
 	opacity: 1
 
+*
+	outline: none
+
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
 	color: #424242
@@ -41,6 +46,7 @@ body
 	font-weight: normal
 	overflow-x: hidden
 	color: #000
+	background-color: #e3e3e3
 
 .container
 	max-width: 1200px
@@ -48,10 +54,22 @@ body
 	margin: 0 auto
 	box-sizing: border-box
 
+.hidden
+	display: none
+
 /* icon */
 .icon
 	display: inline-block
+	&_cursor
+		+sprite($s-cursor)
+	&_list
+		+sprite($s-list)
+	&_air
+		+sprite($s-air)
+	&_check
+		+sprite($s-check)
 /* end icon */
+
 
 
 .header
@@ -59,19 +77,287 @@ body
 	background-position: 50% 50%
 	background-repeat: no-repeat
 	background-size: cover
+	background-attachment: fixed
+	padding-bottom: 180px
+	border-bottom: 2px solid $c1
+	.container
+		padding: 0 30px
 	&__title
 		@extend %black
-		font-size: 42px
-		width: 70%
+		font-size: 36px
+		line-height: 1.3
 		color: #fff
-
+		text-transform: uppercase
+		margin-top: 155px
+	&__subtitle
+		font-size: 24px
+		margin-top: 30px
+		color: #fff
+	&__btn
+		margin-top: 40px
 .top-line
+	padding-top: 60px
 	+clearfix
 	&__logo
 		float: left
+		padding-top: 12px
 	&__btn
 		float: right
 
+
+.row
+	+clearfix
+.col-6
+	float: left
+	width: 50%
+.col-3
+	float: left
+	width: 25%
+
+.title
+	@extend %black
+	font-size: 36px
+	color: $c2
+	text-transform: uppercase
+	position: relative
+	padding-bottom: 15px
+	&:after
+		content: ''
+		position: absolute
+		top: 100%
+		left: 0
+		+size(90px 5px)
+		background-color: $c1
+
+.howto
+	.row
+		background-color: #fbfbfb
+		box-shadow: 0 0 30px rgba(#000,.24)
+		padding: 80px 120px
+	.col-6
+		position: relative
+	&__img
+		margin-left: 30px
+		position: absolute
+		top: -50px
+		left: 100%
+	&__text
+		font-size: 24px
+		padding-right: 3%
+		p
+			padding: 30px 0 0
+	&__btn
+		margin-top: 40px
+
+.time-line
+	margin-top: 30px
+	&__title
+		color: #bbbaba
+		@extend %semibold
+		font-size: 30px
+		text-transform: uppercase
+		text-align: center
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			left: 0
+			right: 0
+			+transform(translateY(-50%))
+			background-color: #bbbaba
+			height: 1px
+			z-index: 1
+		span
+			position: relative
+			z-index: 2
+			display: inline-block
+			background-color: #e3e3e3
+			padding: 0 30px
+	.row
+		margin-top: 100px
+	.col-3
+		text-transform: uppercase
+		box-sizing: border-box
+		padding-left: 30px
+		position: relative
+		.icon
+			position: absolute
+			top: 0
+			left: 0
+	&__line
+		width: 90%
+		position: relative
+		height: 25px
+		margin: 25px auto 0
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			height: 3px
+			background-color: $c1
+			top: 50%
+			+transform(translateY(-50%))
+	&__dot
+		position: absolute
+		top: 0
+		left: 0
+		border: 1px solid #d1d1d1
+		+size(25px)
+		border-radius: 50%
+		&:first-child
+			margin-left: 21%
+		&:nth-child(2)
+			margin-left: 40%
+		&:nth-child(3)
+			margin-left: 59%
+		&:last-child
+			margin-left: 78%
+		span
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			display: block
+			background-color: $c1
+			+size(14px)
+			border-radius: 50%
+			margin: auto
+
+.plans
+	margin-top: 90px
+	text-align: center
+.plan
+	display: inline-block
+	vertical-align: middle
+	width: 313px
+	margin: 0 1%
+	background-color: #fff
+	box-shadow: 0 0 30px rgba(#000,.2)
+	box-sizing: border-box
+	padding: 35px 30px
+	&_big
+		margin-top: 0
+		padding: 50px 30px
+		.plan__img
+			height: 280px
+	&__title
+		font-size: 30px
+		@extend %black
+		text-transform: uppercase
+	&__count
+		font-size: 18px
+		@extend %bold
+		color: $c1
+	&__img
+		background-image: url(media/images/plan.jpg)
+		background-repeat: no-repeat
+		background-size: cover
+		height: 215px
+		margin-top: 10px
+	&__oldprice
+		margin-top: 5px
+		font-size: 12px
+		@extend %bold
+		color: $c2
+	&__price
+		margin-top: 5px
+		font-size: 24px
+		@extend %bold
+		color: $c1
+	&__btn
+		margin-top: 5px
+		display: inline-block
+
+
+.rubl
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		top: 12px
+		left: 0
+		width: 12px
+		height: 3px
+		background-color: $c1
+
+.order
+	margin-top: 50px
+	border-top: 1px solid $c4
+	background-color: #fff
+	text-align: center
+	padding: 30px 0 50px
+	&__title
+		font-size: 24px
+		@extend %black
+
+.form
+	margin-top: 40px
+	&__line
+		text-align: center
+	&__control
+		display: inline-block
+		width: 20%
+		padding: 0 5px
+		box-sizing: border-box
+		vertical-align: top
+
+.input
+	border: 3px solid $c1
+	background-color: #e3e3e3
+	box-sizing: border-box
+	width: 100%
+	height: 42px
+	padding: 0 10px
+	font-size: 16px
+	&.error
+		border-color: #e8403c
+
+.selectize-input
+	border: 3px solid $c1
+	box-sizing: border-box
+	width: 100%
+	height: 42px
+	border-radius: 0
+	background-color: #e3e3e3
+	&.error
+		border-color: #e8403c
+	&.full
+		background-color: #e3e3e3
+	.item,
+	input
+		font-size: 16px
+		background-color: #e3e3e3
+
+.footer
+	background-image: url(media/img/footer.jpg)
+	background-repeat: no-repeat
+	background-size: cover
+	padding: 25px 0
+
+.copyright
+	text-align: center
+	font-size: 14px
+	color: #fff
+
+
+
+.popup
+	background-color: #fff
+	max-width: 400px
+	margin: 0 auto
+	text-align: center
+	position: relative
+	padding: 30px 50px
+	box-sizing: border-box
+	&__title
+		font-size: 18px
+		@extend %black
+		text-transform: uppercase
+	&__text
+		margin-top: 15px
 
 
 //ALWAYS END

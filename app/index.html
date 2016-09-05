@@ -20,12 +20,13 @@
       <div class="container">
         <div class="top-line">
           <div class="top-line__logo">
-            <div class="logo"><a href="#" class="logo__link"><img src="media/images/logo.png" alt=""></a></div>
+            <div class="logo"><a href="#" class="logo__link"><img src="media/img/logo.png" alt=""></a></div>
           </div>
-          <div class="top-line__btn"><a href="#" class="btn">Подписаться</a></div>
+          <div class="top-line__btn"><a href="#" class="btn toOrder">Подписаться</a></div>
         </div>
-        <div class="header__title">Экономте на жидкостях для вейпинг до 50% и получите новые эксклюзивные ароматы</div>
-        <div class="header__subtitle">Первый сервис подписки на премиальные жидкости для вейпинга в России</div>
+        <div class="header__title">ЭКОНОМЬТЕ НА ЖИДКОСТЯХ ДЛЯ <br>ВЕЙПИНГА ДО 50% И ПОЛУЧАЙТЕ НОВЫЕ <br>ЭКСКЛЮЗИВНЫЕ АРОМАТЫ</div>
+        <div class="header__subtitle">Первый сервис подписки на премиальные жидкости <br>для вейпинга в России</div>
+        <div class="header__btn"><a href="#" class="btn toOrder">Подписаться</a></div>
       </div>
     </header>
     <!-- END HEADER -->
@@ -39,37 +40,71 @@
               <p>Из более чем 1500 жидкостей для электронных сигарет мы выбираем для Вас лучшие и закупаем по оптимальным ценам.</p>
               <p>Каждый месяц мы доставляем коробку жидкостей прямо к вам домой. Вы экономите до 50% на покупке и каждый месяц получаете новые вкусы и бренды.</p>
             </div>
+            <div class="howto__btn"><a href="#" class="btn toOrder">Подписаться</a></div>
           </div>
         </div>
       </div>
     </div>
     <!-- END HOWTO -->
+    <!-- BEGIN TIME-LINE -->
+    <div class="time-line">
+      <div class="container">
+        <div class="time-line__title"><span>как это работает</span></div>
+        <div class="row">
+          <div class="col-3"><i class="icon icon_cursor"></i>
+            <p>Выбираете объем коробки и содержание никотина.</p>
+          </div>
+          <div class="col-3"><i class="icon icon_list"></i>
+            <p>Оформляете подписку.</p>
+          </div>
+          <div class="col-3"><i class="icon icon_air"></i>
+            <p>25 числа каждого месяца мы отправляем Вам вашу персонально подобраную коробку.</p>
+          </div>
+          <div class="col-3"><i class="icon icon_check"></i>
+            <p>ВыбирПолучаете коробку и наслаждаетесь густым и вкусным паром.аете объем коробки и содержание никотина.</p>
+          </div>
+        </div>
+        <div class="time-line__line">
+          <div class="time-line__dot"><span></span></div>
+          <div class="time-line__dot"><span></span></div>
+          <div class="time-line__dot"><span></span></div>
+          <div class="time-line__dot"><span></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- END TIME-LINE -->
     <!-- BEGIN PLANS -->
     <div class="plans">
       <div class="container">
         <div class="plan">
           <div class="plan__title">platinum</div>
-          <div class="plan__count">11 бутылочек </div><img src="media/images/plan1.jpg" alt="" class="plan__img">
+          <div class="plan__count">11 бутылочек </div>
+          <div class="plan__img"></div>
           <div class="plan__oldprice">Обычная цена -
-            <u>10000</u>р.
+            <s>10000</s>р.
           </div>
-          <div class="plan__price"><span class="rubl">Р</span>7000</div><a href="#" class="btn btn_blue"></a>
+          <div class="plan__price"><span class="rubl">Р</span>7000</div>
+          <div class="plan__btn"><a href="#" class="btn toOrder">Подписаться</a></div>
         </div>
         <div class="plan plan_big">
           <div class="plan__title">platinum</div>
-          <div class="plan__count">11 бутылочек </div><img src="media/images/plan1.jpg" alt="" class="plan__img">
+          <div class="plan__count">11 бутылочек </div>
+          <div class="plan__img"></div>
           <div class="plan__oldprice">Обычная цена -
-            <u>10000</u>р.
+            <s>10000</s>р.
           </div>
-          <div class="plan__price"><span class="rubl">Р</span>7000</div><a href="#" class="btn btn_blue"></a>
+          <div class="plan__price"><span class="rubl">Р</span>7000</div>
+          <div class="plan__btn"><a href="#" class="btn toOrder">Подписаться</a></div>
         </div>
         <div class="plan">
           <div class="plan__title">platinum</div>
-          <div class="plan__count">11 бутылочек </div><img src="media/images/plan1.jpg" alt="" class="plan__img">
+          <div class="plan__count">11 бутылочек </div>
+          <div class="plan__img"></div>
           <div class="plan__oldprice">Обычная цена -
-            <u>10000</u>р.
+            <s>10000</s>р.
           </div>
-          <div class="plan__price"><span class="rubl">Р</span>7000</div><a href="#" class="btn btn_blue"></a>
+          <div class="plan__price"><span class="rubl">Р</span>7000</div>
+          <div class="plan__btn"><a href="#" class="btn toOrder">Подписаться</a></div>
         </div>
       </div>
     </div>
@@ -77,17 +112,25 @@
     <!-- BEGIN ORDER -->
     <div class="order">
       <div class="container">
-        <div class="order__title"></div>
-        <form action="/" class="form">
+        <div class="order__title">Для заказа заполните следующие поля</div>
+        <form action="/" class="form submit-form">
           <div class="form__line">
             <div class="form__control">
               <input type="text" placeholder="Имя" name="name" class="input">
             </div>
             <div class="form__control">
-              <input type="tel" placeholder="Телефон" name="phone" class="input">
+              <input type="tel" placeholder="Телефон" name="phone" class="input data-inputmask">
             </div>
             <div class="form__control">
-              <button type="submit" class="btn btn_green">подписаться</button>
+              <select name="nikotin" placeholder="Содержание никотина" class="select">
+                <option value="">Содержание никотина</option>
+                <option value="0">Без никотина</option>
+                <option value="3">3 мг</option>
+                <option value="6">6 мг</option>
+              </select>
+            </div>
+            <div class="form__control">
+              <button type="submit" class="btn">подписаться</button>
             </div>
           </div>
         </form>
@@ -97,11 +140,15 @@
     <!-- BEGIN FOOTER -->
     <footer class="footer">
       <div class="container">
-        <div class="copyright">Copyright © 2016 Вейп.Онлайн, All rights reserved.</div>
+        <div class="copyright">Copyright © 2016 Ejuicebox, All rights reserved.</div>
       </div>
     </footer>
     <!-- END FOOTER -->
     <div class="hidden">
+      <div id="popup-succes" class="popup">
+        <div class="popup__title">Ваш заказ оформлен</div>
+        <div class="popup__text">Наш менеджер свяжится с вами в ближайшее время.</div>
+      </div>
     </div><!--[if lt IE 9]>
     <script src="libs/html5shiv/es5-shim.min.js"></script>
     <script src="libs/html5shiv/html5shiv.min.js"></script>
@@ -110,6 +157,8 @@
     <script src="libs/modernizr/modernizr.js"></script>
     <script src="libs/jquery/jquery-3.1.0.min.js"></script>
     <script src="libs/inputmask/inputmask.js"></script>
+    <script src="libs/selectize/selectize.min.js"></script>
+    <script src="libs/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>
