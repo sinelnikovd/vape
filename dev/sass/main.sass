@@ -39,7 +39,7 @@ body textarea:required:valid
 
 body
 	font-size: 14px
-	min-width: 1200px
+	min-width: 320px
 	position: relative
 	line-height: 1.3
 	@extend %thin
@@ -47,6 +47,10 @@ body
 	overflow-x: hidden
 	color: #000
 	background-color: #e3e3e3
+
+img
+	max-width: 100%
+	max-height: 100%
 
 .container
 	max-width: 1200px
@@ -80,8 +84,14 @@ body
 	background-attachment: fixed
 	padding-bottom: 180px
 	border-bottom: 2px solid $c1
+	@media only screen and (max-width : 768px)
+		padding-bottom: 120px
+	@media only screen and (max-width : 480px)
+		padding-bottom: 80px
 	.container
 		padding: 0 30px
+		@media only screen and (max-width : 992px)
+			padding: 0 15px
 	&__title
 		@extend %black
 		font-size: 36px
@@ -89,10 +99,21 @@ body
 		color: #fff
 		text-transform: uppercase
 		margin-top: 155px
+		@media only screen and (max-width : 992px)
+			br
+				display: none
+		@media only screen and (max-width : 768px)
+			margin-top: 100px
+		@media only screen and (max-width : 480px)
+			margin-top: 70px
+			font-size: 30px
 	&__subtitle
 		font-size: 24px
 		margin-top: 30px
 		color: #fff
+		@media only screen and (max-width : 768px)
+			br
+				display: none
 	&__btn
 		margin-top: 40px
 .top-line
@@ -101,8 +122,20 @@ body
 	&__logo
 		float: left
 		padding-top: 12px
+		@media only screen and (max-width : 480px)
+			float: none
+			width: 100%
+			text-align: center
 	&__btn
 		float: right
+		@media only screen and (max-width : 480px)
+			margin-top: 10px
+			float: none
+			width: 100%
+			text-align: center
+			.btn
+				display: inline-block
+
 
 
 .row
@@ -121,6 +154,8 @@ body
 	text-transform: uppercase
 	position: relative
 	padding-bottom: 15px
+	@media only screen and (max-width : 480px)
+		font-size: 30px
 	&:after
 		content: ''
 		position: absolute
@@ -134,18 +169,33 @@ body
 		background-color: #fbfbfb
 		box-shadow: 0 0 30px rgba(#000,.24)
 		padding: 80px 120px
+		@media only screen and (max-width : 1200px)
+			padding: 50px 80px
+		@media only screen and (max-width : 992px)
+			padding: 50px 30px
+		@media only screen and (max-width : 480px)
+			padding: 30px 15px
 	.col-6
 		position: relative
+		@media only screen and (max-width : 768px)
+			width: 100%
 	&__img
 		margin-left: 30px
 		position: absolute
 		top: -50px
 		left: 100%
+		@media only screen and (max-width : 768px)
+			position: static
+			margin-left: 0
 	&__text
 		font-size: 24px
 		padding-right: 3%
+		@media only screen and (max-width : 992px)
+			font-size: 18px
 		p
 			padding: 30px 0 0
+			@media only screen and (max-width : 992px)
+				padding: 20px 0 0
 	&__btn
 		margin-top: 40px
 
@@ -158,6 +208,8 @@ body
 		text-transform: uppercase
 		text-align: center
 		position: relative
+		@media only screen and (max-width : 480px)
+			font-size: 24px
 		&:after
 			content: ''
 			position: absolute
@@ -174,13 +226,32 @@ body
 			display: inline-block
 			background-color: #e3e3e3
 			padding: 0 30px
+			@media only screen and (max-width : 480px)
+				padding: 0 3%
+	&__body
+		@media only screen and (max-width : 768px)
+			position: relative
+			margin: 30px auto 0
+			width: 70%
+		@media only screen and (max-width : 480px)
+			margin: 0
+			width: 100%
 	.row
 		margin-top: 100px
+		@media only screen and (max-width : 768px)
+			margin-top: 0
+			padding-top: 50px
+			padding-left: 40px
+			box-sizing: border-box
 	.col-3
 		text-transform: uppercase
 		box-sizing: border-box
 		padding-left: 30px
 		position: relative
+		@media only screen and (max-width : 768px)
+			float: none
+			width: 100%
+			margin-top: 20px
 		.icon
 			position: absolute
 			top: 0
@@ -190,6 +261,13 @@ body
 		position: relative
 		height: 25px
 		margin: 25px auto 0
+		@media only screen and (max-width : 768px)
+			position: absolute
+			width: 25px
+			height: 100%
+			top: 0
+			bottom: 0
+			left: 0
 		&:after
 			content: ''
 			position: absolute
@@ -199,6 +277,15 @@ body
 			background-color: $c1
 			top: 50%
 			+transform(translateY(-50%))
+			@media only screen and (max-width : 768px)
+				right: auto
+				left: 11px
+				top: 0
+				bottom: 0
+				width: 3px
+				height: 100%
+				+transform(none)
+
 	&__dot
 		position: absolute
 		top: 0
@@ -214,6 +301,19 @@ body
 			margin-left: 59%
 		&:last-child
 			margin-left: 78%
+		@media only screen and (max-width : 768px)
+			&:first-child
+				margin-left: 0
+				top: 14%
+			&:nth-child(2)
+				margin-left: 0
+				top: 36%
+			&:nth-child(3)
+				margin-left: 0
+				top: 58%
+			&:last-child
+				margin-left: 0
+				top: 78%
 		span
 			position: absolute
 			top: 0
@@ -233,14 +333,24 @@ body
 	display: inline-block
 	vertical-align: middle
 	width: 313px
+	position: relative
 	margin: 0 1%
 	background-color: #fff
 	box-shadow: 0 0 30px rgba(#000,.2)
 	box-sizing: border-box
 	padding: 35px 30px
+	@media only screen and (max-width : 1200px)
+		width: 30%
+	@media only screen and (max-width : 768px)
+		width: 60%
+		margin-top: 20px
+	@media only screen and (max-width : 480px)
+		width: 100%
 	&_big
 		margin-top: 0
 		padding: 50px 30px
+		@media only screen and (max-width : 768px)
+			margin-top: 20px
 		.plan__img
 			height: 280px
 	&__title
@@ -254,6 +364,7 @@ body
 	&__img
 		background-image: url(media/images/plan.jpg)
 		background-repeat: no-repeat
+		background-position: 50% 50%
 		background-size: cover
 		height: 215px
 		margin-top: 10px
@@ -295,6 +406,8 @@ body
 
 .form
 	margin-top: 40px
+	@media only screen and (max-width : 768px)
+		margin-top: 20px
 	&__line
 		text-align: center
 	&__control
@@ -303,6 +416,13 @@ body
 		padding: 0 5px
 		box-sizing: border-box
 		vertical-align: top
+		@media only screen and (max-width : 768px)
+			width: 50%
+			margin-top: 10px
+			.btn
+				width: 100%
+		@media only screen and (max-width : 480px)
+			width: 80%
 
 .input
 	border: 3px solid $c1
@@ -360,5 +480,25 @@ body
 		margin-top: 15px
 
 
+
+.triangle
+	position: absolute
+	top: 0
+	right: 0
+	+size(100px)
+	+linear-gradient(to top right, rgba(0,0,0,0) 50%, $c1 51%)
+	&_max
+		.triangle__text
+			top: 25px
+			right: 0
+	&__text
+		position: absolute
+		top: 15px
+		right: 5px
+		+transform(rotate(45deg))
+		@extend %roman
+		font-size: 13px
+		color: #fff
+
 //ALWAYS END
-@import "basic/_media.sass"
+//@import "basic/_media.sass"

@@ -6,7 +6,7 @@
 	//Заявка оставленна
 	$time = date("H-i-s d/m/Y");
 	//С сайта
-	$site = "vape";
+	$site = "Ejuicebox";
 	// с IP:
 	$ip = $_SERVER['REMOTE_ADDR'];
 
@@ -23,12 +23,13 @@
 	// тема письма 
 	$message = "Заявка: <br>Дата: ".$time."<br>С сайта ".$site."<br>с IP: ".$ip."<br><br>Имя: ".$name."<br>Телефон: ".$phone."<br>Никотин: ".$nikotin; 
 
+	echo $message;
 
 	$mailheaders = "Content-type:text/html;charset=utf-8\r\n"; 
 	// формат письма html
 
-	$mailheaders .= "From: SiteRobot <noreply@siterobot.ru>\r\n"; 
-	$mailheaders .= "Reply-To: noreply@siterobot.ru\r\n"; 
+	$mailheaders .= "From: SiteRobot <noreply@ejuicebox.ru>\r\n"; 
+	$mailheaders .= "Reply-To: noreply@ejuicebox.ru\r\n"; 
 	// емайл отправителя и емайл для ответа 
 	
 	mail($to, $subject, $message, $mailheaders);

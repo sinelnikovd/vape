@@ -25,7 +25,7 @@ block content
 		.container
 			.row
 				.col-6
-					.title Как это работает
+					.title Почему Ejuicebox.ru
 					img(src="media/images/bootle.jpg", alt="").howto__img
 					.howto__text
 						p Из более чем 1500 жидкостей для электронных сигарет мы выбираем для Вас лучшие и закупаем по оптимальным ценам.
@@ -39,34 +39,37 @@ block content
 		.container
 			.time-line__title
 				span как это работает
-			.row
-				.col-3
-					i.icon.icon_cursor
-					p Выбираете объем коробки и содержание никотина.
-				.col-3
-					i.icon.icon_list
-					p Оформляете подписку.
-				.col-3
-					i.icon.icon_air
-					p 25 числа каждого месяца мы отправляем Вам вашу персонально подобраную коробку.
-				.col-3
-					i.icon.icon_check
-					p ВыбирПолучаете коробку и наслаждаетесь густым и вкусным паром.аете объем коробки и содержание никотина.
-			.time-line__line
-				.time-line__dot
-					span
-				.time-line__dot
-					span
-				.time-line__dot
-					span
-				.time-line__dot
-					span
+			.time-line__body
+				.row
+					.col-3
+						i.icon.icon_cursor
+						p Выбираете объем коробки и содержание никотина.
+					.col-3
+						i.icon.icon_list
+						p Оформляете подписку.
+					.col-3
+						i.icon.icon_air
+						p 25 числа каждого месяца мы отправляем Вам вашу персонально подобраную коробку.
+					.col-3
+						i.icon.icon_check
+						p Получаете коробку и наслаждаетесь густым и вкусным паром.
+				.time-line__line
+					.time-line__dot
+						span
+					.time-line__dot
+						span
+					.time-line__dot
+						span
+					.time-line__dot
+						span
 	// END TIME-LINE 
 
 	// BEGIN PLANS 
 	.plans
 		.container
 			.plan
+				.triangle.triangle_max
+					.triangle__text Максимум <br>экономии
 				.plan__title platinum
 				.plan__count 11 бутылочек 
 				.plan__img
@@ -79,27 +82,30 @@ block content
 				.plan__btn
 					a(href="#").btn.toOrder Подписаться
 			.plan.plan_big
-				.plan__title platinum
-				.plan__count 11 бутылочек 
+				.triangle
+					.triangle__text Хит <br>продаж
+
+				.plan__title GOLD
+				.plan__count 5 бутылочек 
 				.plan__img
 				.plan__oldprice Обычная цена -
-					s 10000
+					s 5000
 					| р.
 				.plan__price
 					span.rubl Р
-					| 7000
+					| 3500
 				.plan__btn
 					a(href="#").btn.toOrder Подписаться
 			.plan
-				.plan__title platinum
-				.plan__count 11 бутылочек 
+				.plan__title SILVER
+				.plan__count 3 бутылочки 
 				.plan__img
 				.plan__oldprice Обычная цена -
-					s 10000
+					s 3000
 					| р.
 				.plan__price
 					span.rubl Р
-					| 7000
+					| 2000
 				.plan__btn
 					a(href="#").btn.toOrder Подписаться
 	// END PLANS 
